@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCanteen - Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand" style="background: linear-gradient(135deg, #7c3aed, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      👨‍💼 SmartCanteen Admin
+    </div>
+    <div>
+      <span id="adminName"></span>
+      <button id="logoutBtn" class="btn-secondary" style="margin-left: 1rem;">Logout</button>
+    </div>
+  </nav>
+
+  <main>
+    <div id="notification" class="notification"></div>
+
+    <section class="dashboard-header">
+      <h1 style="font-size: 2rem;">Admin Dashboard</h1>
+    </section>
+
+    <div class="card" style="margin-bottom: 2rem;">
+      <h2>Sales Summary</h2>
+      <div id="salesSummary" class="sales-summary"></div>
+    </div>
+
+    <section class="dashboard-grid">
+      <div class="card">
+        <h2>Menu Management</h2>
+        <form id="addMenuForm">
+          <input type="text" id="menuName" placeholder="Item name" required>
+          <input type="number" id="menuPrice" placeholder="Price" required min="0">
+          <input type="text" id="menuCategory" placeholder="Category (e.g., Breakfast)">
+          <input type="text" id="menuDescription" placeholder="Description (optional)">
+          <button type="submit" class="btn-primary">Add Item</button>
+        </form>
+        <div class="divider"></div>
+        <div id="menuList" class="menu-list"></div>
+      </div>
+
+      <div class="card">
+        <h2>All Orders</h2>
+        <div id="ordersList" class="order-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>
