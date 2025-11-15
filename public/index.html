@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCanteen - Login</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand" style="background: linear-gradient(135deg, #7c3aed, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      🍽️ SmartCanteen
+    </div>
+    <div>Welcome!</div>
+  </nav>
+
+  <main>
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <div id="notification" class="notification"></div>
+
+      <div class="auth-container">
+        <div class="card">
+          <h2>Login</h2>
+          <div class="tab-switcher">
+            <button id="userLoginTab" class="active">User Login</button>
+            <button id="adminLoginTab">Admin Login</button>
+          </div>
+          <form id="loginForm">
+            <div>
+              <label for="loginEmail">Email</label>
+              <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            </div>
+            <div>
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Sign Up</h2>
+          <form id="signupForm">
+            <div>
+              <label for="signupName">Name</label>
+              <input type="text" id="signupName" placeholder="Enter your name" required>
+            </div>
+            <div>
+              <label for="signupEmail">Email</label>
+              <input type="email" id="signupEmail" placeholder="Enter your email" required>
+            </div>
+            <div>
+              <label for="signupPassword">Password</label>
+              <input type="password" id="signupPassword" placeholder="Create a password" required>
+            </div>
+            <div>
+              <label for="signupRole">Role</label>
+              <select id="signupRole" required>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/auth.js"></script>
+</body>
+</html>

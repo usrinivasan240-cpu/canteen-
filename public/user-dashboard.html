@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCanteen - User Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand" style="background: linear-gradient(135deg, #7c3aed, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      🍲 SmartCanteen User
+    </div>
+    <div>
+      <span id="userName"></span>
+      <button id="logoutBtn" class="btn-secondary" style="margin-left: 1rem;">Logout</button>
+    </div>
+  </nav>
+
+  <main>
+    <div id="notification" class="notification"></div>
+
+    <section class="dashboard-header">
+      <div>
+        <h1 style="font-size: 2rem;">Today's Menu</h1>
+        <p style="margin-top: 0.5rem; color: rgba(30, 27, 75, 0.7);">Select your favorite dishes and place an order in seconds.</p>
+      </div>
+      <div>
+        <button id="viewOrdersBtn" class="btn-secondary">My Orders</button>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="card">
+        <h2>Menu</h2>
+        <div id="menuList" class="menu-list"></div>
+      </div>
+
+      <div class="card">
+        <h2>Cart</h2>
+        <div id="cartList" class="cart-list"></div>
+        <div class="divider"></div>
+        <div class="cart-summary">
+          <div>
+            <strong>Total:</strong>
+            <span id="cartTotal">₹0</span>
+          </div>
+          <button id="placeOrderBtn" class="btn-primary">Place Order</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Order History</h2>
+        <div id="ordersList" class="order-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/user.js"></script>
+</body>
+</html>
