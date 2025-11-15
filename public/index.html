@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CanteenGo | Smart Canteen Management</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-box">
+      <h1>Welcome to CanteenGo</h1>
+      <p>Delicious meals, quick service, smart management.</p>
+
+      <div id="authAlert" class="alert hidden"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email address</label>
+          <input type="email" id="loginEmail" class="form-control" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" class="form-control" placeholder="Your password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="loginButton" style="width: 100%;">
+          <span role="img" aria-label="login">🔐</span> Log In
+        </button>
+      </form>
+
+      <form id="signupForm" class="hidden">
+        <div class="form-group">
+          <label for="signupName">Full name</label>
+          <input type="text" id="signupName" class="form-control" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Email address</label>
+          <input type="email" id="signupEmail" class="form-control" placeholder="john@mail.com" required>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" class="form-control" placeholder="••••••" minlength="6" required>
+        </div>
+        <div class="form-group">
+          <label>Select role</label>
+          <div class="role-selection" id="roleSelection">
+            <label class="role-option active">
+              <input type="radio" name="role" value="user" checked>
+              <div>👤 User</div>
+              <small>Order food and track tokens</small>
+            </label>
+            <label class="role-option">
+              <input type="radio" name="role" value="admin">
+              <div>🧑‍🍳 Admin</div>
+              <small>Manage menu and orders</small>
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="signupButton" style="width: 100%;">
+          <span role="img" aria-label="spark">✨</span> Create Account
+        </button>
+      </form>
+
+      <div class="auth-toggle">
+        <p>
+          <span id="signupPrompt">New to CanteenGo? <button id="switchToSignup" class="btn btn-outline btn-sm" type="button">Create an account</button></span>
+          <span id="loginPrompt" class="hidden">Already have an account? <button id="switchToLogin" class="btn btn-outline btn-sm" type="button">Log in</button></span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

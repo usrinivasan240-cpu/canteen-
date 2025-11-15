@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | CanteenGo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">🍽️ CanteenGo</a>
+        <div class="nav-links">
+          <span id="userName">Welcome!</span>
+          <button class="btn btn-outline btn-sm" id="logoutBtn">Logout</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <div class="container">
+      <div class="dashboard-header">
+        <h1>Order Your Meal</h1>
+        <p>Choose from our delicious menu and place your order</p>
+      </div>
+
+      <div id="alertBox" class="alert hidden"></div>
+
+      <div class="grid-2">
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <h2>Menu</h2>
+              <select id="categoryFilter" class="form-control" style="width: auto;">
+                <option value="">All Categories</option>
+              </select>
+            </div>
+            <div id="menuGrid" class="menu-grid">
+              <div class="loading">Loading menu...</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card cart-section">
+            <div class="card-header">
+              <h2>Your Cart</h2>
+              <button class="btn btn-sm btn-secondary" id="clearCartBtn">Clear</button>
+            </div>
+            <div id="cartItems">
+              <div class="empty-state">
+                <p>🛒 Your cart is empty</p>
+              </div>
+            </div>
+            <div id="cartTotal" class="cart-total hidden">
+              <span>Total:</span>
+              <span id="totalAmount">₹0</span>
+            </div>
+            <button class="btn btn-primary" id="placeOrderBtn" disabled style="width: 100%; margin-top: 1rem;">
+              Place Order
+            </button>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h2>My Orders</h2>
+              <button class="btn btn-sm btn-secondary" id="refreshOrdersBtn">Refresh</button>
+            </div>
+            <div id="ordersContainer">
+              <div class="loading">Loading orders...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="tokenModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Order Placed!</h2>
+        <button class="close-modal" id="closeTokenModal">&times;</button>
+      </div>
+      <div style="text-align: center;">
+        <p style="font-size: 1rem; color: var(--text-light); margin-bottom: 1rem;">
+          Your token number is:
+        </p>
+        <div class="order-token" id="tokenNumber">--</div>
+        <p style="margin-top: 1rem; color: var(--text-light);">
+          Please collect your order when your token is called!
+        </p>
+        <button class="btn btn-primary" id="okTokenBtn" style="margin-top: 1.5rem;">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/user-dashboard.js"></script>
+</body>
+</html>
