@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | CanteenGo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">🧑‍🍳 CanteenGo Admin</a>
+        <div class="nav-links">
+          <span id="adminName">Admin</span>
+          <button class="btn btn-outline btn-sm" id="logoutBtn">Logout</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <div class="container">
+      <div class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <p>Manage menu items, track orders, and view sales summary.</p>
+      </div>
+
+      <div id="adminAlert" class="alert hidden"></div>
+
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card">
+          <h3>Total Orders</h3>
+          <div class="value" id="totalOrders">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Pending</h3>
+          <div class="value" id="pendingOrders">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>In Progress</h3>
+          <div class="value" id="inProgressOrders">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Revenue</h3>
+          <div class="value" id="totalRevenue">₹0</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <h2>Menu Items</h2>
+              <button class="btn btn-primary btn-sm" id="showMenuModal">+ Add Item</button>
+            </div>
+            <div id="menuTableContainer">
+              <div class="loading">Loading menu...</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <h2>Orders</h2>
+              <button class="btn btn-secondary btn-sm" id="refreshOrdersBtn">Refresh</button>
+            </div>
+            <div id="ordersTableContainer">
+              <div class="loading">Loading orders...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="menuModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="menuModalTitle">Add Menu Item</h2>
+        <button class="close-modal" id="closeMenuModal">&times;</button>
+      </div>
+      <form id="menuForm">
+        <input type="hidden" id="menuItemId">
+        <div class="form-group">
+          <label for="menuName">Item name</label>
+          <input type="text" id="menuName" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="menuDescription">Description</label>
+          <textarea id="menuDescription" class="form-control" rows="3" placeholder="Short description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="menuPrice">Price (₹)</label>
+          <input type="number" id="menuPrice" class="form-control" min="0" step="1" required>
+        </div>
+        <div class="form-group">
+          <label for="menuCategory">Category</label>
+          <input type="text" id="menuCategory" class="form-control" placeholder="Breakfast, Lunch, Snacks...">
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="menuAvailability" checked> Available
+          </label>
+        </div>
+        <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+          <button type="button" class="btn btn-outline" id="cancelMenuModal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveMenuBtn">Save Item</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin-dashboard.js"></script>
+</body>
+</html>
